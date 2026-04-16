@@ -207,7 +207,6 @@ button {
 
 .hero-logo-img {
     width: clamp(200px, 55vw, 360px);
-    filter: brightness(0) invert(1);
 }
 
 .hero-notice {
