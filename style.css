@@ -1438,3 +1438,257 @@ button {
     opacity: 0.85;
 }
 
+/* ========================================
+   MENU CARD — Price Row (ケア / カット 2列)
+======================================== */
+.menu-price-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+.menu-price-item {
+    flex: 1;
+    text-align: center;
+}
+.menu-price-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    color: var(--warm-gray);
+    margin-bottom: 4px;
+}
+.menu-price-item .menu-price {
+    font-size: 1.15rem;
+    margin: 0;
+}
+.menu-price-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--sand);
+    flex-shrink: 0;
+    margin: 0 8px;
+}
+.menu-card.featured .menu-price-label {
+    color: rgba(255,255,255,0.45);
+}
+.menu-card.featured .menu-price-divider {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ========================================
+   Instagram Button
+======================================== */
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 44px;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--white);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    border-radius: 2px;
+    transition: opacity 0.3s;
+}
+.btn-instagram:hover {
+    opacity: 0.85;
+}
+
+/* ========================================
+   ACCORDION
+======================================== */
+.accordion {
+    border: 1px solid var(--sand);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--ivory);
+}
+.accordion-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--brown-dk);
+    letter-spacing: 0.08em;
+    text-align: left;
+    transition: background 0.2s;
+}
+.accordion-btn:hover {
+    background: var(--sand);
+}
+.acc-icon {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    color: var(--gold);
+}
+.accordion-btn[aria-expanded="true"] .acc-icon {
+    transform: rotate(180deg);
+}
+.accordion-body {
+    border-top: 1px solid var(--sand);
+    padding: 28px;
+    animation: accOpen 0.25s ease;
+}
+@keyframes accOpen {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Price Table ── */
+.price-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 320px;
+}
+.price-table th {
+    background: var(--brown-dk);
+    color: var(--cream);
+    padding: 10px 14px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+}
+.price-table th:first-child { text-align: left; }
+.price-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--sand);
+    color: var(--brown);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+}
+.price-table td:not(:first-child) {
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--brown-dk);
+    white-space: nowrap;
+}
+.price-table tr:last-child td { border-bottom: none; }
+.price-table tr:nth-child(even) td {
+    background: rgba(230, 244, 250, 0.4);
+}
+.price-note {
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    margin: 12px 0 20px;
+    text-align: right;
+}
+.price-option-title {
+    text-align: center;
+    font-size: 0.82rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin: 20px 0 12px;
+    font-weight: 500;
+}
+
+/* ── Terms List ── */
+.terms-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.terms-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+.terms-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--gold);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 2px;
+}
+.terms-list strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--brown-dk);
+    margin-bottom: 4px;
+    letter-spacing: 0.06em;
+}
+.terms-list p {
+    font-size: 0.82rem;
+    color: var(--brown);
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+}
+
+/* ========================================
+   ANIMAL CERTIFICATE
+======================================== */
+.animal-cert {
+    background: var(--cream);
+}
+.cert-box {
+    max-width: 600px;
+    border: 1px solid var(--sand);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 2px 16px rgba(46, 31, 19, 0.05);
+}
+.cert-list {
+    display: flex;
+    flex-direction: column;
+}
+.cert-row {
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid var(--sand);
+}
+.cert-row:last-child { border-bottom: none; }
+.cert-row dt {
+    flex-shrink: 0;
+    width: 150px;
+    padding: 14px 20px;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--warm-gray);
+    background: var(--ivory);
+    border-right: 1px solid var(--sand);
+}
+.cert-row dd {
+    padding: 14px 20px;
+    font-size: 0.88rem;
+    color: var(--brown-dk);
+    letter-spacing: 0.06em;
+}
+
+@media (max-width: 480px) {
+    .cert-row { flex-direction: column; }
+    .cert-row dt {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--sand);
+        padding: 10px 16px 6px;
+    }
+    .cert-row dd { padding: 6px 16px 10px; }
+    .price-table td, .price-table th {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+
