@@ -1326,3 +1326,115 @@ button {
         flex-direction: column;
     }
 }
+/* ========================================
+   MENU CARD — Price Row (ケア / カット 2列)
+======================================== */
+.menu-price-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.menu-price-item {
+    flex: 1;
+    text-align: center;
+}
+
+.menu-price-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    color: var(--warm-gray);
+    margin-bottom: 4px;
+}
+
+.menu-price-item .menu-price {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.menu-price-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--sand);
+    flex-shrink: 0;
+    margin: 0 8px;
+}
+
+.menu-card.featured .menu-price-label {
+    color: rgba(255,255,255,0.45);
+}
+
+.menu-card.featured .menu-price-divider {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ========================================
+   MENU — 料金表リンク CTA
+======================================== */
+.menu-pricelist-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0 0;
+    padding: 32px;
+    border: 1px dashed var(--warm-gray);
+    border-radius: 8px;
+    background: var(--ivory);
+}
+
+.menu-pricelist-note {
+    font-size: 0.82rem;
+    color: var(--brown-lt);
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.btn-pricelist {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: var(--brown-dk);
+    color: var(--cream);
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s;
+    font-family: var(--font-sans);
+}
+
+.btn-pricelist:hover {
+    background: var(--brown);
+    transform: translateX(3px);
+}
+
+.btn-pricelist svg {
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-pricelist:hover svg {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   Instagram Button
+======================================== */
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 44px;
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--white);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    border-radius: 2px;
+    transition: opacity 0.3s;
+}
+
+.btn-instagram:hover {
+    opacity: 0.85;
+}
+
