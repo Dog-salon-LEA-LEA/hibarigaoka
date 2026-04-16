@@ -207,6 +207,7 @@ button {
 
 .hero-logo-img {
     width: clamp(200px, 55vw, 360px);
+    filter: brightness(0) invert(1);
 }
 
 .hero-notice {
@@ -492,58 +493,71 @@ button {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* 料金テーブル */
-.price-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* 料金カード（スマホ最適化） */
+.price-section {
+    margin-bottom: 16px;
 }
 
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
+.price-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.price-card-item {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.price-card-breed {
     font-size: 0.88rem;
-    min-width: 320px;
-}
-
-.price-table th {
-    background: var(--brown-dk);
-    color: var(--cream);
-    padding: 10px 14px;
-    text-align: center;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    font-size: 0.8rem;
-}
-
-.price-table th:first-child { text-align: left; }
-
-.price-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--sand);
-    color: var(--brown);
+    color: var(--brown-dk);
     letter-spacing: 0.04em;
     line-height: 1.5;
+    flex: 1;
 }
 
-.price-table td:not(:first-child) {
-    text-align: center;
-    font-size: 0.95rem;
+.price-card-prices {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2px 10px;
+    align-items: center;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.price-card-label {
+    font-size: 0.65rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+.price-card-val {
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--brown-dk);
     white-space: nowrap;
+    text-align: right;
 }
 
-.price-table tr:last-child td { border-bottom: none; }
-
-.price-table tr:nth-child(even) td {
-    background: rgba(230, 244, 250, 0.4);
+.price-card-val.price-na {
+    color: var(--warm-gray);
+    font-weight: 300;
 }
 
 .price-note {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--warm-gray);
-    letter-spacing: 0.1em;
-    margin: 12px 0 20px;
+    letter-spacing: 0.08em;
+    margin: 8px 0 24px;
     text-align: right;
 }
 
@@ -554,6 +568,42 @@ button {
     color: var(--gold);
     margin: 20px 0 12px;
     font-weight: 500;
+}
+
+.price-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--sand);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.price-option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--sand);
+    gap: 12px;
+}
+
+.price-option-item:last-child { border-bottom: none; }
+
+.price-option-item span:first-child {
+    font-size: 0.83rem;
+    color: var(--brown);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+}
+
+.price-option-item span:last-child {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--brown-dk);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 /* 利用規約リスト */
@@ -1030,6 +1080,5 @@ button {
     .cert-row           { flex-direction: column; }
     .cert-row dt        { width: 100%; border-right: none; border-bottom: 1px solid var(--sand); padding: 10px 16px 6px; }
     .cert-row dd        { padding: 6px 16px 10px; }
-    .price-table td,
-    .price-table th     { padding: 8px 10px; font-size: 0.8rem; }
+
 }
