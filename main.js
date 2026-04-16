@@ -53,3 +53,19 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         window.scrollTo({ top, behavior: 'smooth' });
     });
 });
+
+// ---------- Accordion ----------
+document.querySelectorAll('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const bodyId = btn.getAttribute('aria-controls');
+        const body = document.getElementById(bodyId);
+
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (expanded) {
+            body.hidden = true;
+        } else {
+            body.hidden = false;
+        }
+    });
+});
