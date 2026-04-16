@@ -104,54 +104,105 @@
             <h2 class="section-title center">メニューと料金</h2>
             <p class="section-lead center">ワンちゃんの状態に合わせて最適なケアをご提案いたします。</p>
 
-            <!-- ① アコーディオン料金表 -->
-            <div class="accordion" id="acc-price">
-                <button class="accordion-btn" aria-expanded="false" aria-controls="acc-price-body">
-                    <span>料金表を見る</span>
-                    <svg class="acc-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-                <div class="accordion-body" id="acc-price-body" hidden>
-                    <div class="price-table-wrap">
-                        <table class="price-table">
-                            <thead>
-                                <tr>
-                                    <th>犬種</th>
-                                    <th>ケアコース</th>
-                                    <th>カットコース</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>チワワ（ロング）</td><td>¥4,950</td><td>¥6,600</td></tr>
-                                <tr><td>ダックスフンド・パピヨン</td><td>¥5,500</td><td>¥7,150</td></tr>
-                                <tr><td>ポメラニアン</td><td>¥6,050</td><td>¥7,700</td></tr>
-                                <tr><td>ジャックラッセルテリア・パグ</td><td>¥5,500</td><td>—</td></tr>
-                                <tr><td>フレンチブルドッグ</td><td>¥5,720</td><td>—</td></tr>
-                                <tr><td>スピッツ</td><td>¥6,600</td><td>—</td></tr>
-                                <tr><td>キャバリア・マルチーズ・ヨークシャテリア</td><td>¥6,050</td><td>¥8,800</td></tr>
-                                <tr><td>トイプードル・シュナウザー</td><td>¥7,150</td><td>¥10,120</td></tr>
-                                <tr><td>シーズー</td><td>¥6,050</td><td>¥10,120</td></tr>
-                                <tr><td>ビション</td><td>¥7,150</td><td>¥10,120</td></tr>
-                                <tr><td>コッカースパニエル</td><td>¥7,700</td><td>¥11,000</td></tr>
-                                <tr><td>柴犬・コーギー・シェルティ</td><td>¥7,700</td><td>—</td></tr>
-                            </tbody>
-                        </table>
-                        <p class="price-note">記載のない犬種はお問い合わせください。すべて税込価格です。</p>
-                        <div class="price-option-title">＊ オプション ＊</div>
-                        <table class="price-table">
-                            <tbody>
-                                <tr><td>単品（爪・足裏・肛門腺・耳掃除・ヒゲカット）</td><td colspan="2">¥550 / 1点</td></tr>
-                                <tr><td>部分カット</td><td colspan="2">¥550〜</td></tr>
-                                <tr><td>顔カット・ハサミ仕上げ</td><td colspan="2">¥1,650〜</td></tr>
-                                <tr><td>足先バリカン</td><td colspan="2">¥1,100</td></tr>
-                                <tr><td>毛玉・もつれ・サイズ大きめ</td><td colspan="2">¥550〜</td></tr>
-                                <tr><td>保湿ケア（ダーマモイスト）</td><td colspan="2">¥1,100〜</td></tr>
-                                <tr><td>クレイ泥パック</td><td colspan="2">¥880〜</td></tr>
-                            </tbody>
-                        </table>
+            <!-- 料金表（常時表示・スマホ最適化） -->
+            <div class="price-section">
+                <div class="price-cards">
+                    <div class="price-card-item">
+                        <div class="price-card-breed">チワワ（ロング）</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥4,950</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥6,600</span>
+                        </div>
                     </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">ダックスフンド・パピヨン</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥5,500</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥7,150</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">ポメラニアン</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥6,050</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥7,700</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">ジャックラッセルテリア・パグ</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥5,500</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val price-na">—</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">フレンチブルドッグ</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥5,720</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val price-na">—</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">スピッツ</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥6,600</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val price-na">—</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">キャバリア・マルチーズ・ヨークシャテリア</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥6,050</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥8,800</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">トイプードル・シュナウザー</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥7,150</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥10,120</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">シーズー</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥6,050</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥10,120</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">ビション</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥7,150</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥10,120</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">コッカースパニエル</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥7,700</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val">¥11,000</span>
+                        </div>
+                    </div>
+                    <div class="price-card-item">
+                        <div class="price-card-breed">柴犬・コーギー・シェルティ</div>
+                        <div class="price-card-prices">
+                            <span class="price-card-label">ケア</span><span class="price-card-val">¥7,700</span>
+                            <span class="price-card-label">カット</span><span class="price-card-val price-na">—</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="price-note">記載のない犬種はお問い合わせください。すべて税込価格です。</p>
+
+                <div class="price-option-title">＊ オプション ＊</div>
+                <div class="price-options">
+                    <div class="price-option-item"><span>単品（爪・足裏・肛門腺・耳掃除・ヒゲカット）</span><span>¥550 / 1点</span></div>
+                    <div class="price-option-item"><span>部分カット</span><span>¥550〜</span></div>
+                    <div class="price-option-item"><span>顔カット・ハサミ仕上げ</span><span>¥1,650〜</span></div>
+                    <div class="price-option-item"><span>足先バリカン</span><span>¥1,100</span></div>
+                    <div class="price-option-item"><span>毛玉・もつれ・サイズ大きめ</span><span>¥550〜</span></div>
+                    <div class="price-option-item"><span>保湿ケア（ダーマモイスト）</span><span>¥1,100〜</span></div>
+                    <div class="price-option-item"><span>クレイ泥パック</span><span>¥880〜</span></div>
                 </div>
             </div>
 
