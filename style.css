@@ -318,16 +318,16 @@ button {
     gap: 10px;
     padding: 16px 44px;
     border: 1px solid var(--gold);
-    background: var(--gold);
-    color: var(--brown-dk);
+    color: var(--cream);
     font-size: 0.78rem;
     letter-spacing: 0.25em;
     font-family: var(--font-sans);
-    transition: background 0.4s var(--ease), color 0.4s, opacity 0.3s;
+    transition: background 0.4s var(--ease), color 0.4s;
     border-radius: 2px;
 }
 
-.btn-primary:hover { opacity: 0.85; }
+.btn-primary:hover { background: var(--gold); color: var(--brown-dk); }
+
 .btn-line {
     display: inline-flex;
     align-items: center;
@@ -1081,4 +1081,102 @@ button {
     .cert-row dt        { width: 100%; border-right: none; border-bottom: 1px solid var(--sand); padding: 10px 16px 6px; }
     .cert-row dd        { padding: 6px 16px 10px; }
 
+}
+
+/* ---------- STAFF IMAGE ---------- */
+.therapist-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- CONCEPT SUB IMAGES (保湿/リファ/TQ) ---------- */
+.concept-sub-imgs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.concept-sub-imgs img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* ---------- CUT PHOTOS (メニュー内) ---------- */
+.cut-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.cut-photos img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ---------- SALON PHOTOS (内装・外装) ---------- */
+.salon-photos { background: var(--ivory); }
+
+.salon-photo-group {
+    margin-bottom: 48px;
+}
+
+.salon-photo-group:last-child { margin-bottom: 0; }
+
+.salon-photo-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--warm-gray);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.salon-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.salon-photo-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.salon-photo-grid img:hover { transform: scale(1.02); }
+
+/* ---------- GALLERY 9枚 ---------- */
+.ig-placeholder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+}
+
+/* ---------- CONCEPT IMG BOX ---------- */
+.concept-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+    .cut-photos,
+    .salon-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .concept-sub-imgs {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
