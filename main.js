@@ -15,7 +15,7 @@ const revealEls = document.querySelectorAll(
     '.concept-text p, .concept-image, .concept-detail, ' +
     '.menu-card, .voice-card, ' +
     '.reserve-title, .reserve-lead, .reserve-actions, .reserve-info, ' +
-    '.detail-item'
+    '.detail-item, .img-reveal'   // ← この行を追加
 );
 
 revealEls.forEach(el => el.classList.add('reveal'));
