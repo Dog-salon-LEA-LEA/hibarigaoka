@@ -318,15 +318,16 @@ button {
     gap: 10px;
     padding: 16px 44px;
     border: 1px solid var(--gold);
-    color: var(--cream);
+    background: var(--gold);
+    color: var(--brown-dk);
     font-size: 0.78rem;
     letter-spacing: 0.25em;
     font-family: var(--font-sans);
-    transition: background 0.4s var(--ease), color 0.4s;
+    transition: opacity 0.3s;
     border-radius: 2px;
 }
 
-.btn-primary:hover { background: var(--gold); color: var(--brown-dk); }
+.btn-primary:hover { opacity: 0.8; }
 
 .btn-line {
     display: inline-flex;
