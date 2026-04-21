@@ -69,3 +69,58 @@ document.querySelectorAll('.accordion-btn').forEach(btn => {
         }
     });
 });
+
+// ––––– Gallery Slideshow –––––
+(function () {
+const track = document.getElementById(‘galleryTrack’);
+if (!track) return;
+
+const slides = Array.from(track.querySelectorAll('.slide'));
+const dotsWrap = document.getElementById('galleryDots');
+const prevBtn = document.querySelector('.slide-prev');
+const nextBtn = document.querySelector('.slide-next');
+let current = 0;
+let autoTimer;
+
+// ドット生成
+slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `スライド ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+});
+
+function goTo(idx) {
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+}
+
+function next() { goTo(current + 1); }
+function prev() { goTo(current - 1); }
+
+function startAuto() {
+    autoTimer = setInterval(next, 3500);
+}
+function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+}
+
+slides[0].classList.add('active');
+prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+startAuto();
+
+// スワイプ対応
+let startX = 0;
+track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+}, { passive: true });
+})();
