@@ -69,7 +69,7 @@ const dotsWrap = container.querySelector(’.mini-dots, .slide-dots’);
 const prevBtn = container.querySelector(’.mini-prev, .slide-prev’);
 const nextBtn = container.querySelector(’.mini-next, .slide-next’);
 
-```
+
 if (!track || slides.length === 0) return;
 
 let current = 0;
@@ -120,7 +120,6 @@ track.addEventListener('touchend', e => {
         resetAuto();
     }
 }, { passive: true });
-```
 
 }
 
