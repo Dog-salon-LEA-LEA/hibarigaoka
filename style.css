@@ -348,3 +348,44 @@ button { touch-action: manipulation; }
 .slide-dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
 .slide-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.45); border: none; cursor: pointer; transition: background 0.3s, transform 0.3s; padding: 0; }
 .slide-dot.active { background: var(--white); transform: scale(1.35); }
+/* クレイ泥パック 体重別料金 */
+.price-option-stack {
+    align-items: flex-start;
+}
+
+.option-price-table {
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.option-price-table div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: var(--brown-dk);
+    border-bottom: 1px dotted var(--sand);
+    padding-bottom: 4px;
+}
+
+.option-price-table div:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.option-price-table span {
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .price-option-stack {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .option-price-table {
+        width: 100%;
+    }
+}
